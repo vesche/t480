@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo mount /dev/sdc2 /run/media/vesche/IPOD/ -o dmask=000,fmask=111

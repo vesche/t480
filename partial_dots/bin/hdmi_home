@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+xrandr --output HDMI2 --mode 1920x1080 --right-of eDP1
+xrandr --output DP1 --mode 1920x1080 --right-of HDMI2
+nitrogen --set-tiled /home/vesche/pics/tile-Light-Industry-1.JPG
+pkill polybar
+~/.config/bspwm/bspwmrc_home &
+disown

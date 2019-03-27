@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo umount /dev/sdc2
+sudo eject /dev/sdc

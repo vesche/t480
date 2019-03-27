@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+xrandr --output DP1 --mode 2560x1440 --left-of eDP1
+nitrogen --set-tiled /home/vesche/pics/tile-Light-Industry-1.JPG
+pkill polybar
+# /home/vesche/.config/polybar/launch
+~/.config/bspwm/bspwmrc &
+disown

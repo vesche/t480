@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo ip link set down wlp3s0
+sudo wifi-menu -o

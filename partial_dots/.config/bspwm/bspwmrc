@@ -1,0 +1,25 @@
+#! /bin/sh
+
+sxhkd &
+/home/vesche/.config/polybar/launch
+
+bspc config border_width         1
+bspc config window_gap           0
+bspc config top_padding          36
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_by_distance    true
+bspc config history_aware_focus  true
+bspc config click_to_focus       button1
+
+# floating windows
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+
+bspc monitor -d I II III IV V VI VII
+bspc monitor DP1 -d VIII IX X
+
+# /usr/bin/urxvt
