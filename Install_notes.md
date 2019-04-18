@@ -112,20 +112,20 @@ sudo systemctl start sshd
 pacman:
 ```
 pacman -S \
-    vim git tree htop python go python-pip scrot acpi \         # util
-    rxvt-unicode-terminfo fish tmux \                           # terminal
-    nitrogen i3lock \                                           # desktop
-    pulseaudio cmus alsa-utils \                                # audio
-    vlc streamlink \                                            # video
-    net-tools nmap wget tcpdump tcpreplay wireshark-qt \        # networking
-    dialog wpa_supplicant \                                     # wireless
     unzip unrar p7zip \                                         # archive
-    firefox code gimp libreoffice transmission-qt \             # gui apps
-    pcmanfm ranger mupdf radare2 \                              # misc util
+    pulseaudio cmus alsa-utils \                                # audio
+    nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
-    xorg-server xorg-xinit xorg-xrandr xf86-video-intel \       # x
+    firefox code gimp libreoffice transmission-qt pcmanfm \     # gui apps
+    ranger mupdf radare2 binwalk bind-tools feh remmina \       # misc
+    net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
+    rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
-    bspwm sxhkd dmenu                                           # workflow
+    vim git tree htop python go python-pip scrot acpi cloc \    # util
+    vlc streamlink \                                            # video
+    dialog wpa_supplicant aircrack-ng \                         # wireless
+    bspwm sxhkd dmenu \                                         # workflow
+    xorg-server xorg-xinit xorg-xrandr xf86-video-intel         # x
 ```
 
 yay install:
@@ -140,10 +140,11 @@ pacman -U yay-*-x86_64.pkg.tar.xz
 AUR:
 ```
 yay -S \
-    rxvt-unicode-patched \          # terminal
-    discord spotify polybar \       # applications
-    nerd-fonts-source-code-pro \    # font
-    slack-desktop zoom              # work
+    polybar \                                   # bar
+    rxvt-unicode-patched \                      # terminal
+    discord spotify android-studio aseprite \   # applications
+    nerd-fonts-source-code-pro \                # font
+    slack-desktop zoom                          # work
 ```
 
 CPU throttle:
@@ -157,4 +158,3 @@ Update:
 ```
 sudo pacman -Syyu
 ```
-
