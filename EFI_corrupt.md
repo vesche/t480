@@ -2,10 +2,10 @@
 
 Documenting this after RIP 2 hours of my life.
 
-On April 17th I updated the Linux kernel on my T480 from `5.0.5` to `5.0.7`. Upon reboot the system halted before initialization and displayed:
+On April 17th, 2019 I updated the Linux kernel on my T480 from `5.0.5` to `5.0.7`. Upon reboot the system halted before initialization and displayed:
 ```
 Error loading \vmlinuz-linux: Not Found
-Failed to execute Arch Linux (\vmlinuz-linux): Not Foud
+Failed to execute Arch Linux (\vmlinuz-linux): Not Found
 ```
 
 I suspected that the EFI partition was corrupted.
