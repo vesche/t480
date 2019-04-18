@@ -1,5 +1,7 @@
 # t480 Install Guide
 
+No frills Lenovo ThinkPad T480 Arch Linux grab and go.
+
 * Disable secure boot, reboot.
 * On boot hit `Enter` -> `F12` and boot from USB.
 
