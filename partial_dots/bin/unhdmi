@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-xrandr --output DP1 --off
-nitrogen --set-centered /home/vesche/pics/stained.png
-pkill polybar
-# /home/vesche/.config/polybar/launch
-~/.config/bspwm/bspwmrc &
-disown

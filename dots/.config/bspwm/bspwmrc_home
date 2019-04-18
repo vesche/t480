@@ -23,4 +23,3 @@ bspc monitor DP1 -d VIII IX X
 bspc monitor HDMI2 -d XI XII XIII
 
 /home/vesche/.config/polybar/launch
-# /usr/bin/urxvt
