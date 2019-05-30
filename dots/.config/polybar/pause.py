@@ -5,7 +5,7 @@ try:
 except Exception:
     val = 0
 
-if val == "Playing\n":
-    print("")
+if val == 'Playing\n':
+    print('')
 else:
-    print("")
+    print('')
