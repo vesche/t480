@@ -5,6 +5,9 @@ URxvt*boldFont: xft:Source Code Pro Medium:size=12
 ! Disable scrollbar
 URxvt.scrollBar: false
 
+! Fix letter spacing for special chars
+URxvt.letterSpace: 0
+
 ! special
 *.foreground:   #faebd7
 *.background:   #000000

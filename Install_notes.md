@@ -10,7 +10,7 @@ GPT:
 gdisk /dev/nvme0n1
     o
     n
-    +256MB (first partition)
+    +256MB (last sector of boot partition)
     EF00 (EFI)
     n
     ... (use all of disk or partition further)
@@ -109,6 +109,14 @@ sudo systemctl enable sshd
 sudo systemctl start sshd
 ```
 
+ensure locale is set properly
+```
+locale
+localectl set-locale LANG=en_US.UTF-8
+unset LANG
+source /etc/profile.d/locale.sh
+```
+
 pacman:
 ```
 pacman -S \
@@ -140,11 +148,10 @@ pacman -U yay-*-x86_64.pkg.tar.xz
 AUR:
 ```
 yay -S \
-    polybar \                                   # bar
-    rxvt-unicode-patched \                      # terminal
-    discord spotify android-studio aseprite \   # applications
-    nerd-fonts-source-code-pro \                # font
-    slack-desktop zoom                          # work
+    polybar \                                      # bar
+    rxvt-unicode-patched \                         # terminal
+    discord spotify android-studio aseprite \      # applications
+    nerd-fonts-source-code-pro ttf-font-awesome-4  # font
 ```
 
 CPU throttle:
