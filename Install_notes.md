@@ -121,15 +121,17 @@ pacman:
 ```
 pacman -S \
     unzip unrar p7zip \                                         # archive
-    pulseaudio cmus alsa-utils \                                # audio
+    pulseaudio cmus alsa-utils cava \                           # audio
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox code gimp libreoffice transmission-qt pcmanfm \     # gui apps
     ranger mupdf radare2 binwalk bind-tools feh remmina \       # misc
+    geeqie linux-headers sdl2 sdl2_net sdl2_image \             # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
     rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
     vim git tree htop python go python-pip scrot acpi cloc \    # util
+    whois speedtest-cli megatools adb ntp \                     # util cont
     vlc streamlink \                                            # video
     dialog wpa_supplicant aircrack-ng \                         # wireless
     bspwm sxhkd dmenu \                                         # workflow
@@ -151,6 +153,7 @@ yay -S \
     polybar \                                      # bar
     rxvt-unicode-patched \                         # terminal
     discord spotify android-studio aseprite \      # applications
+    cava s-tui \                                   # misc
     nerd-fonts-source-code-pro ttf-font-awesome-4  # font
 ```
 
