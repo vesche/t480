@@ -121,7 +121,7 @@ pacman:
 ```
 pacman -S \
     unzip unrar p7zip \                                         # archive
-    pulseaudio cmus alsa-utils cava \                           # audio
+    pulseaudio cmus alsa-utils \                                # audio
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox code gimp libreoffice transmission-qt pcmanfm \     # gui apps
