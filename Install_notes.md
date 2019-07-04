@@ -124,7 +124,7 @@ pacman -S \
     pulseaudio cmus alsa-utils \                                # audio
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
-    firefox code gimp libreoffice transmission-qt pcmanfm \     # gui apps
+    firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
     ranger mupdf radare2 binwalk bind-tools feh remmina \       # misc
     geeqie linux-headers sdl2 sdl2_net sdl2_image \             # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
@@ -150,11 +150,11 @@ pacman -U yay-*-x86_64.pkg.tar.xz
 AUR:
 ```
 yay -S \
-    polybar \                                      # bar
-    rxvt-unicode-patched \                         # terminal
-    discord spotify android-studio aseprite \      # applications
-    cava s-tui \                                   # misc
-    nerd-fonts-source-code-pro ttf-font-awesome-4  # font
+    polybar \                                               # bar
+    rxvt-unicode-patched \                                  # terminal
+    vscodium-bin discord spotify android-studio aseprite \  # applications
+    cava s-tui \                                            # misc
+    nerd-fonts-source-code-pro ttf-font-awesome-4           # font
 ```
 
 CPU throttle:
