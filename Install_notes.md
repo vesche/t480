@@ -125,13 +125,13 @@ pacman -S \
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
-    ranger mupdf radare2 binwalk bind-tools feh remmina \       # misc
+    ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
     geeqie linux-headers sdl2 sdl2_net sdl2_image \             # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
     rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
     vim git tree htop python go python-pip scrot acpi cloc \    # util
-    whois speedtest-cli megatools adb ntp \                     # util cont
+    whois speedtest-cli megatools adb ntp strace \              # util cont
     vlc streamlink \                                            # video
     dialog wpa_supplicant aircrack-ng \                         # wireless
     bspwm sxhkd dmenu \                                         # workflow
@@ -153,7 +153,7 @@ yay -S \
     polybar \                                               # bar
     rxvt-unicode-patched \                                  # terminal
     vscodium-bin discord spotify android-studio aseprite \  # applications
-    cava s-tui \                                            # misc
+    cava s-tui android-apktool charles \                    # misc
     nerd-fonts-source-code-pro ttf-font-awesome-4           # font
 ```
 
