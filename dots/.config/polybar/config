@@ -2,6 +2,9 @@
 # POLYBAR #
 ###########
 
+# polybar to back
+override-redirect = true
+wm-restack = bspwm
 
 ### COLORS ###
 [colors]
