@@ -126,7 +126,7 @@ pacman -S \
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
     ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
-    geeqie linux-headers sdl2 sdl2_net sdl2_image \             # misc cont
+    geeqie linux-headers sdl2 sdl2_net sdl2_image w3m \         # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
     rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
