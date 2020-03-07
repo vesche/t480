@@ -1,5 +1,11 @@
 # t480 Random Notes
 
+## GUI Apps lagging on 5.x kernel
+
+* https://bbs.archlinux.org/viewtopic.php?pid=1869571
+
+Had to remove xf86-video-intel, never would have guessed that.
+
 ## Firefox
 
 * Dark Reader

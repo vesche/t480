@@ -135,7 +135,7 @@ pacman -S \
     vlc streamlink \                                            # video
     dialog wpa_supplicant aircrack-ng \                         # wireless
     bspwm sxhkd dmenu \                                         # workflow
-    xorg-server xorg-xinit xorg-xrandr xf86-video-intel         # x
+    xorg-server xorg-xinit xorg-xrandr                          # x
 ```
 
 yay install:
