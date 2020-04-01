@@ -123,13 +123,13 @@ source /etc/profile.d/locale.sh
 pacman:
 ```
 pacman -S \
-    unzip unrar p7zip \                                         # archive
+    zip unzip unrar p7zip \                                     # archive
     pulseaudio cmus alsa-utils pavucontrol \                    # audio
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
     ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
-    obs geeqie linux-headers w3m pdftk \                        # misc cont
+    obs-studio geeqie linux-headers w3m pdftk traceroute \      # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
     sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf                # sdl
     rxvt-unicode-terminfo fish tmux \                           # terminal
