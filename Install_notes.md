@@ -10,6 +10,7 @@ GPT:
 gdisk /dev/nvme0n1
     o
     n
+    ... (first sector of boot partition)
     +256MB (last sector of boot partition)
     EF00 (EFI)
     n
@@ -24,8 +25,8 @@ cryptsetup luksFormat /dev/nvme0n1p2
 cryptsetup open --type luks /dev/nvme0n1p2 foo
 pvcreate /dev/mapper/foo
 vgcreate foo_group /dev/mapper/foo
-lvcreate -L32G  foo_group -n swap
-lvcreate -L128G foo_group -n root
+lvcreate -L32G foo_group -n swap
+lvcreate -L64G foo_group -n root
 lvcreate -l 100%FREE foo_group -n home
 ```
 
@@ -49,6 +50,7 @@ mount /dev/nvme0n1p1 /mnt/boot
 
 chroot:
 ```
+# connect to internet
 pacstrap -i /mnt base base-devel
 genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
@@ -65,7 +67,8 @@ passwd # set root password
 vi /etc/pacman.conf # uncomment multilib
 vi /etc/pacman.d/mirrorlist # https://www.archlinux.org/mirrorlist/
 pacman -S intel-ucode
-pacman -S dialog wpa_supplicant # if install on wireless
+pacman -S dialog netctl wpa_supplicant # if install on wireless
+pacman -S linux mkinitcpio # if not installed already
 ```
 
 Bootloader:
@@ -92,13 +95,13 @@ options cryptdevice=UUID=<UUID_HERE>:cryptlvm root=/dev/mapper/foo_group-root qu
 Reboot:
 ```
 exit
-unmount -R /mnt
+umount -R /mnt
 reboot
 ```
 
 First boot:
 ```
-pacman -S sudo
+pacman -S sudo vi
 useradd -m -G wheel -s /bin/bash user
 passwd user
 visudo # uncomment wheel group
@@ -109,7 +112,7 @@ sudo systemctl enable sshd
 sudo systemctl start sshd
 ```
 
-ensure locale is set properly
+Ensure locale is set properly:
 ```
 locale
 localectl set-locale LANG=en_US.UTF-8
@@ -121,13 +124,14 @@ pacman:
 ```
 pacman -S \
     unzip unrar p7zip \                                         # archive
-    pulseaudio cmus alsa-utils \                                # audio
+    pulseaudio cmus alsa-utils pavucontrol \                    # audio
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
     ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
-    geeqie linux-headers sdl2 sdl2_net sdl2_image w3m \         # misc cont
+    obs geeqie linux-headers w3m pdftk \                        # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
+    sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf                # sdl
     rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
     vim git tree htop python go python-pip scrot acpi cloc \    # util
