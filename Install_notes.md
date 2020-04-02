@@ -125,6 +125,7 @@ pacman:
 pacman -S \
     zip unzip unrar p7zip \                                     # archive
     pulseaudio cmus alsa-utils pavucontrol \                    # audio
+    bluez bluez-utils pulseaudio-bluetooth \                    # bluetooth
     nitrogen i3lock \                                           # desktop
     adobe-source-code-pro-fonts noto-fonts \                    # fonts
     firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps

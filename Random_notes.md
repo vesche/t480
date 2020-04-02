@@ -32,3 +32,14 @@ Extensions:
 * Go
 * Code Spell Checker
 * LaTeX Workshop
+
+## bluetooth
+
+* pacman -S bluez pulseaudio-bluetooth
+* pulseaudio -k
+* sudo systemctl start bluetooth
+* bluetooth-ctl
+    * power on
+    * scan on
+    * pair <mac>
+    * connect <mac>
