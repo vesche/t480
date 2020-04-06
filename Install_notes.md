@@ -50,7 +50,7 @@ mount /dev/nvme0n1p1 /mnt/boot
 
 chroot:
 ```
-# connect to internet
+# connect to internet now (wifi-menu -o OR ethernet)
 pacstrap -i /mnt base base-devel
 genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
@@ -58,17 +58,18 @@ arch-chroot /mnt /bin/bash
 
 Setup:
 ```
+pacman -S vi vim sudo
 vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
 ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
-hwlock --systohc --utc
+hwclock --systohc --utc
 echo 'hostname' > /etc/hostname
 passwd # set root password
 vi /etc/pacman.conf # uncomment multilib
 vi /etc/pacman.d/mirrorlist # https://www.archlinux.org/mirrorlist/
 pacman -S intel-ucode
-pacman -S dialog netctl wpa_supplicant # if install on wireless
-pacman -S linux mkinitcpio # if not installed already
+pacman -S dialog netctl wpa_supplicant dhcpcd # if install on wireless
+pacman -S linux mkinitcpio lvm2 # if not installed already
 ```
 
 Bootloader:
@@ -80,7 +81,7 @@ bootctl --path=/boot install
 vi /boot/loader/loader.conf
 # default arch
 # editor 0
-blkid # note UUID
+blkid # note UUID of crypto_LUKS drive (primary)
 ```
 
 vi `/boot/loader/entries/arch.conf`:
@@ -101,7 +102,6 @@ reboot
 
 First boot:
 ```
-pacman -S sudo vi
 useradd -m -G wheel -s /bin/bash user
 passwd user
 visudo # uncomment wheel group
@@ -115,7 +115,7 @@ sudo systemctl start sshd
 Ensure locale is set properly:
 ```
 locale
-localectl set-locale LANG=en_US.UTF-8
+sudo localectl set-locale LANG=en_US.UTF-8
 unset LANG
 source /etc/profile.d/locale.sh
 ```
