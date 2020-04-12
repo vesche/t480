@@ -171,7 +171,7 @@ pip install \
     click crayons bpython httpx numpy Pillow sanic psutil histstat
 
 # edb
-git clone https://github.com/eteran/edb-debugger
+git clone --recursive https://github.com/eteran/edb-debugger.git
     mkdir build
     cd build
     cmake ..
