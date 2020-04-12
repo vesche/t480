@@ -1,11 +1,11 @@
-! Font
+! font
 URxvt*font:     xft:Source Code Pro Medium:size=12
 URxvt*boldFont: xft:Source Code Pro Medium:size=12
 
-! Disable scrollbar
+! disable scrollbar
 URxvt.scrollBar: false
 
-! Fix letter spacing for special chars
+! fix letter spacing for special chars
 URxvt.letterSpace: 0
 
 ! special

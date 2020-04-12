@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+i3lock -t -i /home/user/pics/tile1.png
+

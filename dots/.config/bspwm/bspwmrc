@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 sxhkd &
 
@@ -24,4 +24,4 @@ bspc config remove_unplugged_monitors true
 
 bspc monitor -d I II III IV V VI VII
 
-/home/vesche/.config/polybar/launch
+/home/user/.config/polybar/launch

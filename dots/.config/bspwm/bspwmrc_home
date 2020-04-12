@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 sxhkd &
 
@@ -19,7 +19,7 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
 
 bspc monitor -d I II III IV V VI VII
-bspc monitor DP1 -d VIII IX X
-bspc monitor HDMI2 -d XI XII XIII
+bspc monitor DP-1 -d VIII IX X
+bspc monitor DP-3 -d XI XII XIII
 
-/home/vesche/.config/polybar/launch
+/home/user/.config/polybar/launch

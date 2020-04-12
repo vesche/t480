@@ -7,10 +7,10 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-DISPLAY1="eDP1"
+DISPLAY1="eDP-1"
 [[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar test &
 
-DISPLAYS="$(xrandr -q | grep ' connected' | grep -v 'eDP1' | cut -d ' ' -f1)"
+DISPLAYS="$(xrandr -q | grep ' connected' | grep -v 'eDP-1' | cut -d ' ' -f1)"
 for display in $DISPLAYS; do
   [[ ! -z "$display" ]] && MONITOR="$display" polybar test &
 done;

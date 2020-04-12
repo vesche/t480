@@ -10,10 +10,12 @@ GPT:
 gdisk /dev/nvme0n1
     o
     n
+    1
     ... (first sector of boot partition)
     +256MB (last sector of boot partition)
     EF00 (EFI)
     n
+    2
     ... (use all of disk or partition further)
     8E00 (LVM)
     w
@@ -58,7 +60,8 @@ arch-chroot /mnt /bin/bash
 
 Setup:
 ```
-pacman -S vi vim sudo
+pacman -S vi sudo intel-ucode linux mkinitcpio lvm2
+pacman -S dialog netctl wpa_supplicant dhcpcd # if install on wireless
 vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
 ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
@@ -67,9 +70,6 @@ echo 'hostname' > /etc/hostname
 passwd # set root password
 vi /etc/pacman.conf # uncomment multilib
 vi /etc/pacman.d/mirrorlist # https://www.archlinux.org/mirrorlist/
-pacman -S intel-ucode
-pacman -S dialog netctl wpa_supplicant dhcpcd # if install on wireless
-pacman -S linux mkinitcpio lvm2 # if not installed already
 ```
 
 Bootloader:
@@ -120,28 +120,25 @@ unset LANG
 source /etc/profile.d/locale.sh
 ```
 
-pacman:
+Packages:
 ```
 pacman -S \
-    zip unzip unrar p7zip \                                     # archive
-    pulseaudio cmus alsa-utils pavucontrol \                    # audio
-    bluez bluez-utils pulseaudio-bluetooth \                    # bluetooth
-    nitrogen i3lock \                                           # desktop
-    adobe-source-code-pro-fonts noto-fonts \                    # fonts
-    firefox gimp libreoffice transmission-qt pcmanfm \          # gui apps
-    ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
-    obs-studio geeqie linux-headers w3m pdftk traceroute \      # misc cont
-    net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
-    radare2-cutter r2ghidra-dec boost qt5-xmlpatterns \         # re
-    sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf                # sdl
-    rxvt-unicode-terminfo fish tmux \                           # terminal
-    xf86-input-libinput \                                       # touchpad
-    vim git tree htop python go python-pip scrot acpi cloc \    # util
-    whois speedtest-cli megatools adb ntp strace \              # util cont
-    vlc streamlink \                                            # video
-    dialog wpa_supplicant aircrack-ng \                         # wireless
-    bspwm sxhkd dmenu \                                         # workflow
-    xorg-server xorg-xinit xorg-xrandr                          # x
+    `# archive   ` p7zip zip unzip unrar  \
+    `# audio     ` pulseaudio pavucontrol alsa-utils \
+    `# bluetooth ` bluez bluez-utils pulseaudio-bluetooth \
+    `# code      ` vim git python python-pip go rust \
+    `# desktop   ` nitrogen i3lock \
+    `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
+    `# gui       ` firefox vlc libreoffice obs-studio gimp transmission-qt pcmanfm mupdf geeqie \
+    `# libs      ` linux-headers sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf \
+    `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns \
+    `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
+    `# re        ` ghidra radare2 radare2-cutter r2ghidra-dec binwalk \
+    `# terminal  ` rxvt-unicode-terminfo fish tmux \
+    `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink \
+    `# wireless  ` dialog wpa_supplicant aircrack-ng \
+    `# workflow  ` bspwm sxhkd dmenu \
+    `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput
 ```
 
 yay install:
@@ -156,11 +153,11 @@ pacman -U yay-*-x86_64.pkg.tar.xz
 AUR:
 ```
 yay -S \
-    polybar \                                               # bar
-    rxvt-unicode-patched \                                  # terminal
-    vscodium-bin discord spotify android-studio aseprite \  # applications
-    cava s-tui android-apktool charles ida-free \           # misc
-    nerd-fonts-source-code-pro ttf-font-awesome-4           # font
+    `# bar      ` polybar \
+    `# terminal ` rxvt-unicode-patched \
+    `# gui      ` vscodium-bin discord spotify android-studio aseprite \  
+    `# misc     ` cava s-tui android-apktool charles ida-free \
+    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4
 ```
 
 Other tools:

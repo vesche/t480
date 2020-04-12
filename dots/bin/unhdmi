@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-xrandr --output DP1 --off
-xrandr --output DP2 --off
-xrandr --output HDMI2 --off
-nitrogen --set-centered /home/vesche/pics/orangebird.jpg
+xrandr --output DP-1 --off
+xrandr --output DP-2 --off
+xrandr --output DP-3 --off
+nitrogen --set-centered /home/user/pics/orangebird.jpg
 pkill polybar
 ~/.config/bspwm/bspwmrc &
 disown
