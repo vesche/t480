@@ -165,7 +165,7 @@ Other tools:
 # python libraries, add ~/.local/bin to PATH
 pip install \
     requests flask websockets websocket-client beautifulsoup4 blessed \
-    click crayons bpython httpx numpy Pillow sanic psutil histstat
+    twine click crayons bpython httpx numpy Pillow sanic psutil histstat
 
 # edb
 git clone --recursive https://github.com/eteran/edb-debugger.git
