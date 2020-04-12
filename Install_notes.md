@@ -132,6 +132,7 @@ pacman -S \
     ranger mupdf radare2 binwalk bind-tools feh remmina tk \    # misc
     obs-studio geeqie linux-headers w3m pdftk traceroute \      # misc cont
     net-tools nmap wget tcpdump tcpreplay wireshark-qt deluge \ # networking
+    radare2-cutter r2ghidra-dec boost qt5-xmlpatterns \         # re
     sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf                # sdl
     rxvt-unicode-terminfo fish tmux \                           # terminal
     xf86-input-libinput \                                       # touchpad
@@ -158,8 +159,27 @@ yay -S \
     polybar \                                               # bar
     rxvt-unicode-patched \                                  # terminal
     vscodium-bin discord spotify android-studio aseprite \  # applications
-    cava s-tui android-apktool charles \                    # misc
+    cava s-tui android-apktool charles ida-free \           # misc
     nerd-fonts-source-code-pro ttf-font-awesome-4           # font
+```
+
+Other tools:
+```
+# python libraries, add ~/.local/bin to PATH
+pip install \
+    requests flask websockets websocket-client beautifulsoup4 blessed \
+    click crayons bpython httpx numpy Pillow sanic psutil histstat
+
+# edb
+git clone https://github.com/eteran/edb-debugger
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ./edb
+
+# pwn tools
+pip install git+https://github.com/Gallopsled/pwntools.git@dev
 ```
 
 CPU throttle:
