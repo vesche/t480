@@ -123,7 +123,7 @@ source /etc/profile.d/locale.sh
 Packages:
 ```
 pacman -S \
-    `# archive   ` p7zip zip unzip unrar  \
+    `# archive   ` p7zip zip unzip unrar \
     `# audio     ` pulseaudio pavucontrol alsa-utils \
     `# bluetooth ` bluez bluez-utils pulseaudio-bluetooth \
     `# code      ` vim git python python-pip go rust \
