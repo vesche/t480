@@ -40,6 +40,12 @@ Solution link:
 
 Had to remove xf86-video-intel, never would have guessed that.
 
+## Ghidra
+
+* Edit -> Tool Options -> Tool
+    * Swing Look and Feel -> "CDE/Motif"
+    * Use Inverted Colors (Enabled)
+
 ## vscode
 
 Change font:
