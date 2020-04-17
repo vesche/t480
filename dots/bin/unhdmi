@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-xrandr --output DP-1 --off
-xrandr --output DP-2 --off
-xrandr --output DP-3 --off
+xrandr --output DP1 --off
+xrandr --output DP2 --off
+xrandr --output DP3 --off
 nitrogen --set-centered /home/user/pics/orangebird.jpg
 pkill polybar
 ~/.config/bspwm/bspwmrc &

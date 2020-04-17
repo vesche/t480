@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 sxhkd &
 
@@ -18,8 +18,8 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
 
-bspc monitor -d I II III IV V VI VII
-bspc monitor DP-1 -d VIII IX X
-bspc monitor DP-3 -d XI XII XIII
+bspc monitor     -d  I  II  III  IV  V
+bspc monitor DP1 -d VI VII VIII  IX  X
+bspc monitor DP3 -d XI XII XIII XIV XV XVI
 
 /home/user/.config/polybar/launch

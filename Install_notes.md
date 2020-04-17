@@ -138,7 +138,7 @@ pacman -S \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink \
     `# wireless  ` dialog wpa_supplicant aircrack-ng \
     `# workflow  ` bspwm sxhkd dmenu \
-    `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput
+    `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput xf86-video-intel
 ```
 
 yay install:
@@ -164,7 +164,7 @@ Other tools:
 ```
 # python libraries, add ~/.local/bin to PATH
 pip install \
-    requests flask websockets websocket-client beautifulsoup4 blessed \
+    requests flask websockets websocket-client beautifulsoup4 blessed catt \
     twine click crayons bpython httpx numpy Pillow sanic psutil histstat
 
 # edb

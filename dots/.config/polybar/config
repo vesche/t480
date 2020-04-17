@@ -2,9 +2,8 @@
 # POLYBAR #
 ###########
 
-# polybar to back
-override-redirect = true
-wm-restack = bspwm
+override-redirect=true
+wm-restack=bspwm
 
 ### COLORS ###
 [colors]
@@ -42,8 +41,8 @@ font-0 = Source Code Pro Medium:size=12;2
 font-1 = FontAwesome:size=10;2
 
 modules-left = bspwm 
-modules-center = previous playpause next spotify
-modules-right = wlan battery0 battery1 backlight volume date 
+# modules-center = 
+modules-right = wlan backlight battery0 volume date 
 
 tray-position = right
 
@@ -52,21 +51,40 @@ tray-position = right
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.black}
+pin-workspaces = true
+
+ws-icon-0 = I;0
+ws-icon-1 = II;1
+ws-icon-2 = III;2
+ws-icon-3 = IV;3
+ws-icon-4 = V;4
+ws-icon-5 = VI;5
+ws-icon-6 = VII;6
+ws-icon-7 = VIII;7
+ws-icon-8 = IX;8
+ws-icon-9 = X;9
+ws-icon-10 = XI;A
+ws-icon-11 = XII;B
+ws-icon-12 = XIII;C
+ws-icon-13 = XIV;D
+ws-icon-14 = XV;E
+ws-icon-15 = XVI;F
+
+format = <label-state>
+
+label-focused = %icon%
 label-focused-underline= ${colors.purple}
 label-focused-padding = 1
 
-label-occupied = %index%
+label-empty = %icon%
+label-empty-padding = 1
+
+label-occupied = %icon%
 label-occupied-padding = 1
 
-label-urgent = %index%!
-label-urgent-background = ${colors.white}
+label-urgent = %icon%
+label-urgent-background = ${colors.yellow}
 label-urgent-padding = 1
-
-label-empty = %index%
-label-empty-foreground = ${colors.white}
-label-empty-padding = 1
 
 
 ### DATE ###
@@ -103,7 +121,7 @@ ramp-headphones-0 = 
 type = internal/backlight
 card = intel_backlight
 format = <ramp><label>
-label = %percentage%%
+label = "%percentage%% "
 format-padding = 0
 ramp-0 = 
 ramp-1 = 
@@ -119,9 +137,9 @@ battery = BAT0
 adapter = AC0
 poll-interval = 30
 
-format-charging = <animation-charging><label-charging>%
-format-discharging = <ramp-capacity><label-discharging>%
-format-full = <ramp-capacity><label-full>%
+format-charging = "<animation-charging><label-charging>%"
+format-discharging = "<ramp-capacity><label-discharging>%"
+format-full = "<ramp-capacity><label-full>%"
 label-charging = %percentage%
 label-discharging = %percentage%
 label-full = %percentage%
@@ -142,44 +160,13 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-[module/battery1]
-type = internal/battery
-
-full-at = 95
-battery = BAT1
-adapter = AC0
-poll-interval = 60
-
-format-charging = <animation-charging><label-charging>%
-format-discharging = <ramp-capacity><label-discharging>%
-format-full = <ramp-capacity><label-full>%
-label-charging = %percentage%
-label-discharging = %percentage%
-label-full = %percentage%
-format-charging-padding = 1
-format-discharging-padding = 1
-format-full-padding = 1
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
-
 
 ### WLAN ###
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp59s0
 interval = 30
-label-connected = " %essid%  " 
-label-disconnected = " Not Connected  "
+label-connected = " %essid% " 
+label-disconnected = " No Internet "
 format-padding = 0
 

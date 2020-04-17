@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-xrandr --output DP-1 --mode 1920x1080 --above eDP-1
-xrandr --output DP-3 --mode 1920x1080 --right-of DP-1
+xrandr --output DP1 --mode 1920x1080 --above eDP1
+xrandr --output DP3 --mode 1920x1080 --right-of DP1
 nitrogen --set-tiled /home/user/pics/tile2.png
 pkill polybar
 ~/.config/bspwm/bspwmrc_home &

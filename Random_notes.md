@@ -33,13 +33,6 @@ Add-ons:
     * [A Dark Hacker News](https://userstyles.org/styles/22794/a-dark-hacker-news)
     * [Stylus Dark - ShadowFox](https://userstyles.org/styles/153739/stylus-dark-shadowfox)
 
-## GUI apps lagging on 5.x kernel
-
-Solution link:
-* https://bbs.archlinux.org/viewtopic.php?pid=1869571
-
-Had to remove xf86-video-intel, never would have guessed that.
-
 ## Ghidra
 
 * Edit -> Tool Options -> Tool
@@ -55,4 +48,3 @@ Extensions:
 * Python
 * Go
 * Code Spell Checker
-* LaTeX Workshop

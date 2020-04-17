@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 sxhkd &
 
@@ -22,6 +22,6 @@ bspc config pointer_action2 resize_corner
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 
-bspc monitor -d I II III IV V VI VII
+bspc monitor eDP1 -d I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI
 
 /home/user/.config/polybar/launch
