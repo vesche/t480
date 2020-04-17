@@ -154,10 +154,10 @@ AUR:
 ```
 yay -S \
     `# bar      ` polybar \
-    `# terminal ` rxvt-unicode-patched \
+    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4
     `# gui      ` vscodium-bin discord spotify android-studio aseprite \  
     `# misc     ` cava s-tui android-apktool charles ida-free \
-    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4
+    `# terminal ` rxvt-unicode-patched \
 ```
 
 Other tools:
