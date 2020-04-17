@@ -3,6 +3,6 @@
 xrandr --output DP1 --mode 1920x1080 --above eDP1
 xrandr --output DP3 --mode 1920x1080 --right-of DP1
 nitrogen --set-tiled /home/user/pics/tile2.png
-pkill polybar
 ~/.config/bspwm/bspwmrc_home &
+/home/user/.config/polybar/launch
 disown

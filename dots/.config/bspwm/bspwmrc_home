@@ -18,8 +18,6 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
 
-bspc monitor     -d  I  II  III  IV  V
-bspc monitor DP1 -d VI VII VIII  IX  X
-bspc monitor DP3 -d XI XII XIII XIV XV XVI
-
-/home/user/.config/polybar/launch
+bspc monitor eDP1 -d  I  II  III  IV  V
+bspc monitor DP1  -d VI VII VIII  IX  X
+bspc monitor DP3  -d XI XII XIII XIV XV

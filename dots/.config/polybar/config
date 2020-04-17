@@ -5,6 +5,7 @@
 override-redirect=true
 wm-restack=bspwm
 
+
 ### COLORS ###
 [colors]
 black = #000000
@@ -53,22 +54,21 @@ type = internal/bspwm
 
 pin-workspaces = true
 
-ws-icon-0 = I;0
-ws-icon-1 = II;1
-ws-icon-2 = III;2
-ws-icon-3 = IV;3
-ws-icon-4 = V;4
-ws-icon-5 = VI;5
-ws-icon-6 = VII;6
-ws-icon-7 = VIII;7
-ws-icon-8 = IX;8
-ws-icon-9 = X;9
-ws-icon-10 = XI;A
-ws-icon-11 = XII;B
-ws-icon-12 = XIII;C
-ws-icon-13 = XIV;D
-ws-icon-14 = XV;E
-ws-icon-15 = XVI;F
+ws-icon-0 = I;1
+ws-icon-1 = II;2
+ws-icon-2 = III;3
+ws-icon-3 = IV;4
+ws-icon-4 = V;5
+ws-icon-5 = VI;6
+ws-icon-6 = VII;7
+ws-icon-7 = VIII;8
+ws-icon-8 = IX;9
+ws-icon-9 = X;A
+ws-icon-10 = XI;B
+ws-icon-11 = XII;C
+ws-icon-12 = XIII;D
+ws-icon-13 = XIV;E
+ws-icon-14 = XV;F
 
 format = <label-state>
 
