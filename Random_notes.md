@@ -39,7 +39,24 @@ Add-ons:
     * Swing Look and Feel -> "CDE/Motif"
     * Use Inverted Colors (Enabled)
 
-## vscode
+## Ranger Icons
+
+~/.Xresouces needs to use "Sauce Code Pro":
+```
+URxvt*font:     xft:SauceCodePro Nerd Font Mono:size=12
+URxvt*boldFont: xft:SauceCodePro Nerd Font Mono:size=12
+```
+
+Need at minimum this package (AUR): `nerd-fonts-source-code-pro`
+
+Then install ranger_devicons:
+```
+$ git clone https://github.com/alexanderjeurissen/ranger_devicons
+$ cd ranger_devicons/
+$ make install
+```
+
+## VSCodium
 
 Change font:
 * File -> Preferences -> Settings -> Text Editor -> Font -> Font Family -> "Source Code Pro"
