@@ -39,6 +39,36 @@ Add-ons:
     * Swing Look and Feel -> "CDE/Motif"
     * Use Inverted Colors (Enabled)
 
+## KVM/QEMU/libvirt
+
+```
+$ sudo pacman -S qemu virt-manager virt-viewer libguestfs dnsmasq vde2 bridge-utils ebtables iptables
+$ sudo systemctl enable libvirtd.service
+$ sudo systemctl start libvirtd.service
+$ sudo vim /etc/libvirt/libvirtd.conf
+$ # unix_sock_group = "libvirt"
+$ # unix_sock_rw_perms = "0770"
+$ sudo usermod -a -G libvirt user
+$ newgrp libvirt
+$ cat br1.xml 
+<network>
+  <name>br1</name>
+  <forward mode='nat'/>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <ip address='192.168.69.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.69.128' end='192.168.69.254'/>
+    </dhcp>
+  </ip>
+</network>
+$ sudo virsh net-define br1.xml
+$ sudo virsh net-start br1
+$ sudo virsh net-autostart br1
+$ # virsh net-list --all / brctl show / ip addr to verify
+$ sudo systemctl restart libvirtd.service
+$ virt-manager
+```
+
 ## Ranger Icons
 
 ~/.Xresouces needs to use "Sauce Code Pro":
