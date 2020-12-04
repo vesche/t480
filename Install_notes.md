@@ -60,13 +60,13 @@ arch-chroot /mnt /bin/bash
 
 Setup:
 ```
-pacman -S vi sudo intel-ucode linux mkinitcpio lvm2
-pacman -S dialog netctl wpa_supplicant dhcpcd # if install on wireless
+pacman -S vi sudo intel-ucode linux linux-firmware mkinitcpio lvm2 dhcpcd
+pacman -S dialog netctl wpa_supplicant # if install on wireless
 vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
 ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
 hwclock --systohc --utc
-echo 'hostname' > /etc/hostname
+echo hostname > /etc/hostname
 passwd # set root password
 vi /etc/pacman.conf # uncomment multilib
 vi /etc/pacman.d/mirrorlist # https://www.archlinux.org/mirrorlist/
@@ -124,7 +124,7 @@ Packages:
 ```
 pacman -S \
     `# archive   ` p7zip zip unzip unrar \
-    `# audio     ` pulseaudio pavucontrol alsa-utils \
+    `# audio     ` pulseaudio pulseaudio-alsa pavucontrol alsa-plugins alsa-utils \
     `# bluetooth ` bluez bluez-utils pulseaudio-bluetooth \
     `# code      ` vim git python python-pip go rust \
     `# desktop   ` nitrogen i3lock \
