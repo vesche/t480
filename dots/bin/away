@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# teams will time out at 10m
+sleep_period=5m
+
+while true; do
+    xdotool mousemove 10 10 mousemove restore
+    sleep .1
+    xdotool mousemove 200 200 mousemove restore
+    sleep ${sleep_period}
+done
+

@@ -28,7 +28,7 @@ cryptsetup open --type luks /dev/nvme0n1p2 foo
 pvcreate /dev/mapper/foo
 vgcreate foo_group /dev/mapper/foo
 lvcreate -L32G foo_group -n swap
-lvcreate -L64G foo_group -n root
+lvcreate -L128G foo_group -n root
 lvcreate -l 100%FREE foo_group -n home
 ```
 
@@ -129,7 +129,7 @@ pacman -S \
     `# code      ` vim git python python-pip go rust \
     `# desktop   ` nitrogen i3lock \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
-    `# gui       ` firefox vlc libreoffice obs-studio gimp transmission-qt pcmanfm mupdf geeqie \
+    `# gui       ` firefox vlc libreoffice obs-studio flowblade gimp transmission-qt pcmanfm mupdf geeqie \
     `# libs      ` linux-headers sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf \
     `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \

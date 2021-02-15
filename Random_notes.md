@@ -32,6 +32,8 @@ Add-ons:
     * [StackOverflow Dark](https://github.com/StylishThemes/StackOverflow-Dark)
     * [A Dark Hacker News](https://userstyles.org/styles/22794/a-dark-hacker-news)
     * [Stylus Dark - ShadowFox](https://userstyles.org/styles/153739/stylus-dark-shadowfox)
+* [TTV ad-block](https://github.com/odensc/ttv-ublock)
+    * Currently blocks ads on Twitch.
 
 ## Ghidra
 
