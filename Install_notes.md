@@ -159,10 +159,10 @@ AUR:
 ```
 yay -S \
     `# bar      ` polybar \
-    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4
+    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4 \
     `# gui      ` vscodium-bin discord spotify android-studio aseprite \  
     `# misc     ` cava s-tui android-apktool charles ida-free \
-    `# terminal ` rxvt-unicode-patched \
+    `# terminal ` rxvt-unicode-patched
 ```
 
 Other tools:
@@ -173,19 +173,19 @@ pip install --user \
     twine click crayons bpython httpx numpy Pillow sanic psutil histstat \
     scanless youtube-dl
 
-# edb
-git clone --recursive https://github.com/eteran/edb-debugger.git
-    mkdir build
-    cd build
-    cmake ..
-    make
-    ./edb
-
 # pwn tools
 pip install git+https://github.com/Gallopsled/pwntools.git@dev
 
 # ootbat
-git clone https://github.com/vesche/ootbat /opt
+sudo git clone https://github.com/vesche/ootbat /opt/ootbat
+
+# edb
+sudo git clone --recursive https://github.com/eteran/edb-debugger.git /opt/edb-debugger
+cd /opt/edb-debugger
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo make
 ```
 
 CPU throttle:
