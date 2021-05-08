@@ -131,7 +131,7 @@ pacman -S \
     `# archive   ` p7zip zip unzip unrar \
     `# audio     ` pulseaudio pulseaudio-alsa pavucontrol alsa-plugins alsa-utils \
     `# bluetooth ` bluez bluez-utils pulseaudio-bluetooth \
-    `# code      ` vim git python python-pip go rust \
+    `# code      ` vim micro git python python-pip go rust \
     `# desktop   ` nitrogen i3lock \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
     `# gui       ` firefox vlc libreoffice obs-studio flowblade gimp transmission-qt pcmanfm mupdf geeqie \
@@ -168,9 +168,10 @@ yay -S \
 Other tools:
 ```
 # python libraries, add ~/.local/bin to PATH
-pip install \
+pip install --user \
     requests flask websockets websocket-client beautifulsoup4 blessed catt \
-    twine click crayons bpython httpx numpy Pillow sanic psutil histstat
+    twine click crayons bpython httpx numpy Pillow sanic psutil histstat \
+    scanless youtube-dl
 
 # edb
 git clone --recursive https://github.com/eteran/edb-debugger.git
@@ -182,6 +183,9 @@ git clone --recursive https://github.com/eteran/edb-debugger.git
 
 # pwn tools
 pip install git+https://github.com/Gallopsled/pwntools.git@dev
+
+# ootbat
+git clone https://github.com/vesche/ootbat /opt
 ```
 
 CPU throttle:
