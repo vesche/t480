@@ -120,6 +120,11 @@ unset LANG
 source /etc/profile.d/locale.sh
 ```
 
+Give write access to brightness file:
+```
+sudo chmod 666 /sys/class/backlight/intel_backlight/brightness
+```
+
 Packages:
 ```
 pacman -S \
