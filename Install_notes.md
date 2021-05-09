@@ -120,11 +120,6 @@ unset LANG
 source /etc/profile.d/locale.sh
 ```
 
-Give write access to brightness file:
-```
-sudo chmod 666 /sys/class/backlight/intel_backlight/brightness
-```
-
 Packages:
 ```
 pacman -S \
@@ -136,7 +131,7 @@ pacman -S \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
     `# gui       ` firefox vlc libreoffice obs-studio flowblade gimp transmission-qt pcmanfm mupdf geeqie \
     `# libs      ` linux-headers sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf \
-    `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns \
+    `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns fortune-mod \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
     `# re        ` ghidra radare2 radare2-cutter r2ghidra-dec binwalk \
     `# terminal  ` rxvt-unicode-terminfo fish tmux \

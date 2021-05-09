@@ -1,4 +1,92 @@
 #!/usr/bin/env bash
 
-sudo wifi-menu -o
-sudo ntpd -gq
+# check for root
+if [ "$EUID" -ne 0 ]
+    then echo "This script must be run as root."
+    exit
+fi
+
+# ask source: https://gist.github.com/davejamesmiller/1965569
+ask() {
+    local prompt default reply
+
+    if [[ ${2:-} = 'Y' ]]; then
+        prompt='Y/n'
+        default='Y'
+    elif [[ ${2:-} = 'N' ]]; then
+        prompt='y/N'
+        default='N'
+    else
+        prompt='y/n'
+        default=''
+    fi
+
+    while true; do
+
+        # Ask the question (not using "read -p" as it uses stderr not stdout)
+        echo -n "$1 [$prompt] "
+
+        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        read -r reply </dev/tty
+
+        # Default?
+        if [[ -z $reply ]]; then
+            reply=$default
+        fi
+
+        # Check if the reply is valid
+        case "$reply" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac
+
+    done
+}
+
+clear
+
+echo "
+   (
+   )\\
+   {_}    _        _______  _______  _______  _______ 
+  .-;-.  ( \      (  ____ |(  ____ |(  ____ |(  ___  )
+ |'-=-'| | (      | (    \/| (    \/| (    \/| (   ) |
+ |     | | |      | (__    | |      | |      | |   | |
+ |     | | |      |  __)   | | ____ | | ____ | |   | |
+ |     | | |      | (      | | \_  )| | \_  )| |   | |
+ |     | | (____/\| (____/\| (___) || (___) || (___) |
+ '.___.' (_______/(_______/(_______)(_______)(_______)
+"
+
+fortune
+echo
+
+if ask "Ready?" Y; then
+    echo "Let's do this shit."
+else
+    echo "Come back when you're ready."
+    exit
+fi
+
+# fix brightness file
+echo "Fixing backlight..."
+chmod 666 /sys/class/backlight/intel_backlight/brightness
+# set brightness to 50%
+bscale 60000 2&> /dev/null
+
+if ask "Connect to the internet?" Y; then
+    # set wifi off
+    ip link set wlp59s0 down
+    # connect to internet
+    wifi-menu -o
+    # fix time
+    echo "NTP sync..."
+    ntpd -gq 2&> /dev/null
+    # display ipinfo
+    echo -e "Network info:"
+    curl ipinfo.io
+else
+    :
+fi
+
+echo -e "\nHappy hacking! :)"
