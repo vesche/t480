@@ -78,7 +78,11 @@ if ask "Connect to the internet?" Y; then
     # set wifi off
     ip link set wlp59s0 down
     # connect to internet
-    wifi-menu -o
+    wifi_status=$(wifi-menu -o)
+    if [[ $? == 3 ]]; then
+        ip link set wlp59s0 up
+        wifi-menu -o
+    fi
     # fix time
     echo "NTP sync..."
     ntpd -gq 2&> /dev/null
