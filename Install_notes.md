@@ -134,7 +134,7 @@ pacman -S \
     `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns fortune-mod \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
     `# re        ` ghidra radare2 radare2-cutter r2ghidra-dec binwalk \
-    `# terminal  ` rxvt-unicode-terminfo fish tmux \
+    `# terminal  ` rxvt-unicode-terminfo xonsh fish tmux \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink \
     `# wireless  ` dialog wpa_supplicant aircrack-ng \
     `# workflow  ` bspwm sxhkd dmenu \

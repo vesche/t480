@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	urxvt -e /usr/bin/xonsh
 
 # program launcher
 super + space
