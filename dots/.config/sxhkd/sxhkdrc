@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	dmenu_run -b -nb \#000000 -nf \#faebd7 -fn 'Source Code Pro Medium-12'
+	dmenu_run -b -nb '#000000' -nf '#faebd7' -fn 'Source Code Pro Medium-12'
 
 # make sxhkd reload its configuration files:
 super + Escape
