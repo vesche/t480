@@ -69,7 +69,9 @@ hwclock --systohc --utc
 echo hostname > /etc/hostname
 passwd # set root password
 vi /etc/pacman.conf # uncomment multilib
-vi /etc/pacman.d/mirrorlist # https://www.archlinux.org/mirrorlist/
+pacman -S reflector
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 Bootloader:
