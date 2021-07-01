@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt -e /usr/bin/xonsh
+	urxvt -e /usr/bin/fish
 
 # program launcher
 super + space
