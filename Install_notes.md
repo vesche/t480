@@ -158,7 +158,7 @@ yay -S \
     `# bar      ` polybar \
     `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4 \
     `# gui      ` vscodium-bin discord spotify android-studio aseprite \  
-    `# misc     ` cava s-tui android-apktool charles ida-free \
+    `# misc     ` cava s-tui android-apktool charles ida-free
 ```
 
 Other tools:
