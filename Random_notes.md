@@ -44,14 +44,15 @@ Add-ons:
 ## KVM/QEMU/libvirt
 
 ```
-$ sudo pacman -S qemu virt-manager virt-viewer libguestfs dnsmasq vde2 bridge-utils ebtables iptables
+$ sudo pacman -S qemu virt-manager libguestfs dnsmasq vde2 bridge-utils ebtables iptables
+$ # ^ hit yes on any iptable package replacement warnings
 $ sudo systemctl enable libvirtd.service
 $ sudo systemctl start libvirtd.service
 $ sudo vim /etc/libvirt/libvirtd.conf
 $ # unix_sock_group = "libvirt"
 $ # unix_sock_rw_perms = "0770"
 $ sudo usermod -a -G libvirt user
-$ newgrp libvirt
+$ newgrp libvirt # or logout & back in
 $ cat br1.xml 
 <network>
   <name>br1</name>
@@ -66,7 +67,8 @@ $ cat br1.xml
 $ sudo virsh net-define br1.xml
 $ sudo virsh net-start br1
 $ sudo virsh net-autostart br1
-$ # virsh net-list --all / brctl show / ip addr to verify
+$ sudo virsh net-list --all
+$ brctl show
 $ sudo systemctl restart libvirtd.service
 $ virt-manager
 ```
