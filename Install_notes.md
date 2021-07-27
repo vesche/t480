@@ -108,6 +108,8 @@ useradd -m -G wheel -s /bin/bash user
 passwd user
 visudo # uncomment wheel group
 exit # login as user
+sudo systemctl start dhcpcd
+sudo systemctl enable dhcpcd
 sudo pacman -S openssh
 sudo vi /etc/ssh/sshd_config # change a few things
 sudo systemctl enable sshd
@@ -149,7 +151,7 @@ mkdir ~/aur && cd ~/aur
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
 tar xzvf yay.tar.gz && cd yay/
 makepkg -s
-pacman -U yay-*-x86_64.pkg.tar.xz
+pacman -U yay-*-x86_64.pkg.tar.zst
 ```
 
 AUR:
@@ -191,9 +193,8 @@ tide configure
 
 CPU throttle:
 ```
-yay -S lenovo-throttling-fix-git
-sudo systemctl enable lenovo_fix
-sudo systemctl start lenovo_fix
+sudo pacman -S throttled
+sudo systemctl enable --now lenovo_fix.service
 ```
 
 Update:
