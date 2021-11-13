@@ -1,7 +1,7 @@
 # t480
 
 These are my personal notes & configs for running Arch Linux on a Lenovo ThinkPad T480.  
-I run a somewhat minimal setup: x, bspwm, sxhkd, dmenu, polybar, urxvt, fish, firefox, and vscodium.
+I run a somewhat minimal setup: x, bspwm, sxhkd, dmenu, polybar, urxvt, fish.
 
 * [Install notes](./Install_notes.md)
 * [dotfiles](./dots)
