@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-xrandr --output DP-1 --mode 1920x1080 --above eDP-1
-xrandr --output DP-3 --mode 1920x1080 --right-of DP-1
-nitrogen --set-tiled /home/user/pics/tile2.png
-~/.config/bspwm/bspwmrc_home &
-/home/user/.config/polybar/launch
+xrandr --output HDMI2 --mode 1920x1080 --right-of eDP1
+xrandr --output DP1 --mode 1920x1080 --right-of HDMI2
+nitrogen --set-tiled /home/vesche/pics/tile2.png
+pkill sxhkd
+sxhkd &
+/home/vesche/.config/bspwm/bspwmrc_home &
+/home/vesche/.config/polybar/launch
 disown

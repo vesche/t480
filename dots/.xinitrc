@@ -23,4 +23,5 @@ away &
 # disable auditctl
 auditctl -e0
 
+sxhkd &
 exec bspwm
