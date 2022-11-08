@@ -29,6 +29,7 @@ Extensions:
 
 ## Ghidra
 
+Dark mode:
 * Edit -> Tool Options -> Tool
     * Swing Look and Feel -> "CDE/Motif"
     * Use Inverted Colors (Enabled)
@@ -109,7 +110,6 @@ Extensions:
 * Python
 * Go
 * Code Spell Checker
-
 
 ## VLC Streaming (streamlink, etc)
 
