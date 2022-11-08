@@ -124,3 +124,13 @@ Extensions:
 * Python
 * Go
 * Code Spell Checker
+
+
+## VLC Streaming (streamlink, etc)
+
+If you attempt to stream using VLC on Arch Linux and get a corrupted stream:
+
+![1](img/stream-scrot.png)
+
+You likely need the [aribb24](https://archlinux.org/packages/extra/x86_64/aribb24/) package: `sudo pacman -S aribb24`
+
