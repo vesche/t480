@@ -75,19 +75,12 @@ $ virt-manager
 
 ## Ranger Icons
 
-~/.Xresouces needs to use "Sauce Code Pro":
-```
-URxvt*font:     xft:SauceCodePro Nerd Font Mono:size=12
-URxvt*boldFont: xft:SauceCodePro Nerd Font Mono:size=12
-```
-
-Need at minimum this package (AUR): `nerd-fonts-source-code-pro`
+You will need a font that can support these icons. Check out one of the nerd font packages if you don't have a working font.
 
 Then install ranger_devicons:
 ```
-$ git clone https://github.com/alexanderjeurissen/ranger_devicons
-$ cd ranger_devicons/
-$ make install
+$ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+$ echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
 ```
 
 ## Steam Audio / pavucontrol issue
