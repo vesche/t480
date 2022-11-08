@@ -8,4 +8,4 @@ I run a somewhat minimal setup: x, bspwm, sxhkd, dmenu, polybar, urxvt, fish.
 * [Fixing corrupt EFI partition](./EFI_corrupt.md)
 * [Random Notes](./Random_notes.md)
 
-![scrot](scrot.png)
+![scrot](img/scrot.png)
