@@ -22,18 +22,10 @@ I'm using AirPod Pros with my T480, they work great.
 Fix monospace font:
 * Preferences -> Fonts and Colors -> Advanced -> Change Monospace to Source Code Pro -> Uncheck "Allow pages to choose their own fonts, instead of your selections above" -> Ok
 
-Add-ons:
+Extensions:
 * uBlock Origin
 * Imagus
 * Dark Reader
-* Stylus
-    * [GitHub Dark](https://github.com/StylishThemes/GitHub-Dark)
-    * [Dark Wikipedia](https://userstyles.org/styles/42313/dark-wikipedia)
-    * [StackOverflow Dark](https://github.com/StylishThemes/StackOverflow-Dark)
-    * [A Dark Hacker News](https://userstyles.org/styles/22794/a-dark-hacker-news)
-    * [Stylus Dark - ShadowFox](https://userstyles.org/styles/153739/stylus-dark-shadowfox)
-* [TTV ad-block](https://github.com/odensc/ttv-ublock)
-    * Currently blocks ads on Twitch.
 
 ## Ghidra
 
