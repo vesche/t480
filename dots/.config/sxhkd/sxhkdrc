@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt -e /usr/bin/fish
+    alacritty -o font.size=8 -e /usr/bin/fish
 
 # program launcher
 super + @space

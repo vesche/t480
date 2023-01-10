@@ -88,19 +88,6 @@ allow-moves=yes
 
 It will fix the problem.
 
-## Urxvt tabbed
-
-Add this to `~/.Xresources`
-
-```
-! tabs
-URxvt.perl-ext-common: tabbed
-URxvt.tabbed.tabbar-fg: 3
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 7
-URxvt.tabbed.tab-bg: 0
-```
-
 ## VSCodium
 
 Change font:
