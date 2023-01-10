@@ -186,10 +186,10 @@ cd build
 sudo cmake ..
 sudo make
 
-# customize fish
+# configure fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install IlanCosman/tide
-tide configure
+fisher install IlanCosman/tide@v5
+set -U fish_greeting ""
 ```
 
 CPU throttle:
