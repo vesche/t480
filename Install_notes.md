@@ -190,6 +190,7 @@ sudo make
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
 set -U fish_greeting ""
+fish_add_path ~/.local/bin/
 ```
 
 CPU throttle:
