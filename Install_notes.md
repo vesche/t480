@@ -134,7 +134,7 @@ pacman -S \
     `# code      ` vim micro git python python-pip go rust \
     `# desktop   ` nitrogen i3lock \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
-    `# gui       ` firefox vlc libreoffice obs-studio flowblade gimp transmission-qt pcmanfm mupdf geeqie \
+    `# gui       ` vlc libreoffice obs-studio flowblade gimp transmission-qt pcmanfm mupdf geeqie \
     `# libs      ` linux-headers sdl2 sdl2_net sdl2_image sdl2_mixer sdl2_ttf \
     `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns fortune-mod \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
@@ -160,7 +160,7 @@ AUR:
 yay -S \
     `# bar      ` polybar \
     `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4 \
-    `# gui      ` vscodium-bin discord spotify android-studio aseprite \  
+    `# gui      ` vscodium-bin discord spotify aseprite librewolf \  
     `# misc     ` cava s-tui android-apktool charles ida-free
 ```
 
