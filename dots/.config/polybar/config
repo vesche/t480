@@ -2,10 +2,7 @@
 # POLYBAR #
 ###########
 
-# override-redirect=true
 
-
-### COLORS ###
 [colors]
 black = #000000
 white = #faebd7
@@ -16,8 +13,7 @@ purple = #ae3bd7
 green = #0ce819
 
 
-### TEST ###
-[bar/test]
+[bar/t480bar]
 monitor = ${env:MONITOR:eDP-1}
 
 width = 100%
@@ -42,12 +38,11 @@ font-1 = FontAwesome:size=10;2
 
 modules-left = bspwm 
 # modules-center = 
-modules-right = wlan backlight battery0 volume date
+modules-right = wlan backlight battery0 battery1 volume date 
 
 tray-position = right
 
 
-### BSPWM ###
 [module/bspwm]
 type = internal/bspwm
 
@@ -86,7 +81,6 @@ label-urgent-background = ${colors.yellow}
 label-urgent-padding = 1
 
 
-### DATE ###
 [module/date]
 type = internal/date
 interval = 10
@@ -98,14 +92,13 @@ format-foreground = ${colors.yellow}
 format-padding = 0
 
 
-### VOLUME ### 
 [module/volume]
 type = internal/alsa
 format-volume = <ramp-volume><label-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
 label-muted =  mute
-label-muted-foreground = #aaa
+# label-muted-foreground =
 format-volume-padding = 1
 format-muted-padding = 1
 
@@ -115,7 +108,6 @@ ramp-volume-2 = 
 ramp-headphones-0 = 
 
 
-### BACKLIGHT ###
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
@@ -128,7 +120,6 @@ ramp-1 = 
 ramp-2 = 
 
 
-### BATTERY ###
 [module/battery0]
 type = internal/battery
 
@@ -161,12 +152,48 @@ animation-charging-4 = 
 animation-charging-framerate = 750
 
 
-### WLAN ###
+[module/battery1]
+type = internal/battery
+
+full-at = 95
+battery = BAT1
+adapter = AC0
+poll-interval = 30
+
+format-charging = "<animation-charging><label-charging>%"
+format-discharging = "<ramp-capacity><label-discharging>%"
+format-full = "<ramp-capacity><label-full>%"
+label-charging = %percentage%
+label-discharging = %percentage%
+label-full = %percentage%
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+
 [module/wlan]
 type = internal/network
-interface = wlp59s0
+interface = wlp3s0
 interval = 30
 label-connected = " %essid% " 
 label-disconnected = " No Internet "
 format-padding = 0
+
+
+### polybar not always on top
+# override-redirect = true
+wm-restack = bspwm
 

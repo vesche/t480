@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 path_ac="/sys/class/power_supply/AC"
 path_battery_0="/sys/class/power_supply/BAT0"
