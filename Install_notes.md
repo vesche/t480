@@ -166,7 +166,7 @@ yay -S \
 
 Other tools:
 ```
-# python libraries, add ~/.local/bin to PATH
+# python libraries
 pip install --user \
     requests flask websockets websocket-client beautifulsoup4 blessed catt \
     twine click crayons bpython httpx numpy Pillow sanic psutil histstat \
@@ -185,8 +185,10 @@ sudo mkdir build
 cd build
 sudo cmake ..
 sudo make
+```
 
-# configure fish
+Configure fish:
+```
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
 set -U fish_greeting ""
@@ -197,6 +199,15 @@ CPU throttle:
 ```
 sudo pacman -S throttled
 sudo systemctl enable --now lenovo_fix.service
+```
+
+dots:
+```
+git clone https://github.com/vesche/t480 && cd t480/
+cp -r dots/.* ~/
+cp -r dots/pics ~/
+sudo cp dots/bin/* /usr/local/bin/
+sudo cp dots/.dialogrc /root/
 ```
 
 Update:
