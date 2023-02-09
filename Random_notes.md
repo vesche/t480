@@ -10,11 +10,13 @@ I'm using AirPod Pros with my T480, they work great.
 * pulseaudio -k
 * sudo systemctl start bluetooth
 * sudo systemctl enable bluetooth
-* bluetooth-ctl
-    * power on
-    * scan on
-    * pair <mac>
-    * connect <mac>
+* bluetoothctl
+    * `power on`
+    * `scan on`
+    * `scan off` (when you found the device)
+    * `pair <mac>`
+    * `connect <mac>`
+    * `exit`
 * Follow instructions [here](https://wiki.archlinux.org/index.php/Bluetooth_headset#Setting_up_auto_connection) to setup auto connect
 
 ## LibreWolf
