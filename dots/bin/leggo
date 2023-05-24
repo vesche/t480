@@ -43,6 +43,18 @@ ask() {
     done
 }
 
+function get_interface {
+    interfaces=$(ip link show | awk -F': ' '{print $2}' | grep -v lo)
+    select interface in $interfaces; do
+        if [ -n "$interface" ]; then
+            echo $interface
+            return
+        else
+            :
+        fi
+    done
+}
+
 clear
 
 echo "
@@ -75,13 +87,14 @@ chmod 666 /sys/class/backlight/intel_backlight/brightness
 bscale 60000 2&> /dev/null
 
 if ask "Connect to the internet?" Y; then
+    interface=$(get_interface)
     # set wifi off
-    ip link set wlp59s0 down
+    ip link set $interface down
     # connect to internet
-    wifi_status=$(wifi-menu -o)
+    wifi_status=$(wifi-menu -o $interface)
     if [[ $? == 3 ]]; then
-        ip link set wlp59s0 up
-        wifi-menu -o
+        ip link set $interface up
+        wifi-menu -o $interface
     fi
     # fix time
     echo "NTP sync..."
