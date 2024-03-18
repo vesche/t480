@@ -62,14 +62,14 @@ Setup:
 ```
 pacman-key --init
 pacman-key --populate archlinux
-pacman -Syu vi sudo intel-ucode linux linux-firmware mkinitcpio lvm2 dhcpcd netctl wpa_supplicant dialog
-vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
+pacman -Syu vi vim sudo intel-ucode linux linux-firmware mkinitcpio lvm2 dhcpcd netctl wpa_supplicant dialog
+vim /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
 ln -s /usr/share/zoneinfo/America/Chicago /etc/localtime
 hwclock --systohc --utc
 echo hostname > /etc/hostname
 passwd # set root password
-vi /etc/pacman.conf # uncomment multilib
+vim /etc/pacman.conf # uncomment multilib
 pacman -Sy
 pacman -S reflector
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
@@ -78,17 +78,20 @@ reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorli
 
 Bootloader:
 ```
-vi /etc/mkinitcpio.conf
+vim /etc/mkinitcpio.conf
 # HOOKS=(base udev autodetect keyboard keymap modconf block encrypt lvm2 filesystems fsck)
 mkinitcpio -p linux
+umount /boot
+vim /etc/fstab # UUID=<id> /boot vfat rw,realtime,fmask=0137,dmask=0027,errors=remount-ro 0 2
+mount -a
 bootctl --path=/boot install
-vi /boot/loader/loader.conf
+vim /boot/loader/loader.conf
 # default arch
 # editor 0
 blkid # note UUID of crypto_LUKS drive (primary)
 ```
 
-vi `/boot/loader/entries/arch.conf`:
+vim `/boot/loader/entries/arch.conf`:
 ```
 title Arch Linux
 linux /vmlinuz-linux
