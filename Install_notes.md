@@ -50,9 +50,18 @@ mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 ```
 
+if not using ethernet:
+```
+iwctl
+    device list
+    station wlan0 scan
+    station wlan0 get-networks
+    station wlan0 connect <SSID>
+    exit
+```
+
 chroot:
 ```
-# connect to internet now (wifi-menu -o OR ethernet)
 pacstrap -i /mnt base base-devel
 genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
@@ -81,9 +90,6 @@ Bootloader:
 vim /etc/mkinitcpio.conf
 # HOOKS=(base udev autodetect keyboard keymap modconf block encrypt lvm2 filesystems fsck)
 mkinitcpio -p linux
-umount /boot
-vim /etc/fstab # UUID=<id> /boot vfat rw,realtime,fmask=0137,dmask=0027,errors=remount-ro 0 2
-mount -a
 bootctl --path=/boot install
 vim /boot/loader/loader.conf
 # default arch
