@@ -60,11 +60,12 @@ arch-chroot /mnt /bin/bash
 
 Setup:
 ```
-pacman -S vi sudo intel-ucode linux linux-firmware mkinitcpio lvm2 dhcpcd
-pacman -S dialog netctl wpa_supplicant # if install on wireless
+pacman-key --init
+pacman-key --populate archlinux
+pacman -Syu vi sudo intel-ucode linux linux-firmware mkinitcpio lvm2 dhcpcd netctl wpa_supplicant dialog
 vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
-ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
+ln -s /usr/share/zoneinfo/America/Chicago /etc/localtime
 hwclock --systohc --utc
 echo hostname > /etc/hostname
 passwd # set root password
