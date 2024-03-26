@@ -138,7 +138,7 @@ pacman -S \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
     `# re        ` ghidra binwalk \
     `# terminal  ` alacritty fish tmux \
-    `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc \
+    `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc man-db \
     `# workflow  ` bspwm sxhkd dmenu \
     `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput xf86-video-intel
 ```
