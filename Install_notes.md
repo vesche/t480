@@ -156,7 +156,7 @@ AUR:
 ```
 yay -S \
     `# bar      ` polybar \
-    `# fonts    ` nerd-fonts-source-code-pro ttf-font-awesome-4 \
+    `# fonts    ` nerd-fonts-git ttf-font-awesome-4 \
     `# gui      ` discord aseprite \  
     `# misc     ` cava s-tui charles ida-free
 ```
@@ -165,7 +165,7 @@ Other tools:
 ```
 # python libraries
 pip install --user \
-    requests flask websockets websocket-client beautifulsoup4 \
+    requests Flask websockets websocket-client beautifulsoup4 \
     twine click crayons bpython numpy Pillow sanic psutil histstat \
     scanless youtube-dl
 
