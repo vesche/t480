@@ -156,7 +156,7 @@ AUR:
 ```
 yay -S \
     `# bar      ` polybar \
-    `# fonts    ` nerd-fonts-git ttf-font-awesome-4 \
+    `# fonts    ` ttf-sourcecodepro-nerd ttf-font-awesome-4 \
     `# gui      ` discord aseprite \  
     `# misc     ` cava s-tui charles ida-free
 ```
