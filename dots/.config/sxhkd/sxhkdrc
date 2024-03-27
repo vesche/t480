@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    alacritty -o font.size=8 -e /usr/bin/fish
+    alacritty -o font.size=12 -e /usr/bin/fish
 
 # program launcher
 super + @space
@@ -119,4 +119,16 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# keyboard volume wheel
+#
+
+# lower volume
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 {-1%, -1%}
+
+# raise volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 {+1%, +1%}
 
