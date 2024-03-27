@@ -1,5 +1,3 @@
-⚠️ I am no longer using a T480 as of Feb 2024, this repo is now archived.
-
 # t480
 
 These are my personal notes & configs for running Arch Linux on a Lenovo ThinkPad T480.  

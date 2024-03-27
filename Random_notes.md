@@ -19,7 +19,7 @@ I'm using AirPod Pros with my T480, they work great.
     * `exit`
 * Follow instructions [here](https://wiki.archlinux.org/index.php/Bluetooth_headset#Setting_up_auto_connection) to setup auto connect
 
-## LibreWolf
+## LibreWolf / Firefox
 
 Fix monospace font:
 * Preferences -> Fonts and Colors -> Advanced -> Change Monospace to Source Code Pro -> Uncheck "Allow pages to choose their own fonts, instead of your selections above" -> Ok

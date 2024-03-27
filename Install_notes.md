@@ -133,11 +133,11 @@ pacman -S \
     `# code      ` vim git python python-pip go rust \
     `# desktop   ` nitrogen i3lock \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
-    `# gui       ` firefox code vlc obs-studio transmission-qt pcmanfm mupdf geeqie \
-    `# misc      ` ranger bind-tools feh tk w3m pdftk boost qt5-xmlpatterns fortune-mod linux-headers \
+    `# gui       ` firefox vlc obs-studio transmission-qt pcmanfm mupdf geeqie \
+    `# misc      ` bind-tools feh tk pdftk boost qt5-xmlpatterns fortune-mod linux-headers \
     `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
     `# re        ` ghidra binwalk \
-    `# terminal  ` alacritty fish tmux \
+    `# terminal  ` alacritty fish tmux ranger w3m \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc man-db \
     `# workflow  ` bspwm sxhkd dmenu \
     `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput xf86-video-intel
@@ -157,8 +157,8 @@ AUR:
 yay -S \
     `# bar      ` polybar \
     `# fonts    ` ttf-sourcecodepro-nerd ttf-font-awesome-4 \
-    `# gui      ` discord aseprite \  
-    `# misc     ` cava s-tui charles ida-free
+    `# gui      ` aseprite discord google-chrome visual-studio-code-bin \  
+    `# misc     ` cava s-tui charles ida-free android-studio
 ```
 
 Other tools:
@@ -181,7 +181,7 @@ sudo make
 Configure fish:
 ```
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install IlanCosman/tide@v5
+fisher install IlanCosman/tide@v6
 set -U fish_greeting ""
 fish_add_path ~/.local/bin/
 ```
