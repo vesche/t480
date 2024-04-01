@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 xrandr --output DP1 --mode 1920x1080 --right-of eDP1
-nitrogen --set-tiled /home/vesche/pics/tile2.png
+nitrogen --set-tiled /home/user/pics/tile2.png
 pkill sxhkd
 sxhkd &
-/home/vesche/.config/bspwm/bspwmrc_hdmi &
-/home/vesche/.config/polybar/launch
+/home/user/.config/bspwm/bspwmrc_hdmi &
+/home/user/.config/polybar/launch
 disown
