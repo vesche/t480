@@ -1,5 +1,3 @@
-xrdb -merge ~/.Xresources
-
 # java gui fix
 export _JAVA_AWT_WM_NONREPARENTING=1
 
