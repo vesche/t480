@@ -14,12 +14,6 @@ nitrogen --set-centered /home/user/pics/orangebird.jpg; \
 /home/user/.config/polybar/launch
 } &
 
-# start ootbat
-/opt/ootbat/ootbat &
-
-# start away
-away &
-
 # disable auditctl
 auditctl -e0
 
