@@ -5,9 +5,9 @@ xrandr --output HDMI2 --off
 xrandr --output DP1 --off
 xrandr --output DP2 --off
 xrandr --output DP3 --off
-nitrogen --set-centered /home/vesche/pics/orangebird.jpg
+nitrogen --set-centered /home/user/pics/orangebird.jpg
 pkill sxhkd
 sxhkd &
-/home/vesche/.config/bspwm/bspwmrc &
-/home/vesche/.config/polybar/launch
+/home/user/.config/bspwm/bspwmrc &
+/home/user/.config/polybar/launch
 disown
