@@ -189,7 +189,7 @@ fish_add_path ~/.local/bin/
 CPU throttle:
 ```
 sudo pacman -S throttled
-sudo systemctl enable --now lenovo_fix.service
+sudo systemctl enable --now throttled.service
 ```
 
 dots:
