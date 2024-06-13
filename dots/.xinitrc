@@ -1,4 +1,4 @@
-xset -dpms
+xset s off -dpms
 xrdb -merge ~/.Xresources
 
 # java gui fix
