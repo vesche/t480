@@ -139,7 +139,7 @@ pacman -S \
     `# re        ` ghidra binwalk \
     `# terminal  ` alacritty fish tmux ranger w3m \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc man-db \
-    `# workflow  ` bspwm sxhkd dmenu \
+    `# workflow  ` bspwm sxhkd dmenu dunst \
     `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput xf86-video-intel
 ```
 
