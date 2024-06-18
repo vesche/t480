@@ -135,7 +135,7 @@ pacman -S \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
     `# gui       ` firefox vlc obs-studio transmission-qt pcmanfm mupdf geeqie \
     `# misc      ` bind-tools feh tk pdftk boost qt5-xmlpatterns fortune-mod linux-headers \
-    `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina \
+    `# net       ` net-tools wget tcpdump tcpreplay traceroute nmap wireshark-qt remmina cloudflared \
     `# re        ` ghidra binwalk \
     `# terminal  ` alacritty fish tmux ranger w3m \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc man-db \
@@ -184,6 +184,14 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v6
 set -U fish_greeting ""
 fish_add_path ~/.local/bin/
+```
+
+Cloudflared:
+```
+# create systemd service file, see: https://wiki.archlinux.org/title/Cloudflared
+# ^ set port to 53
+vim /etc/resolv.conf # change to 127.0.0.1
+systemctl enable cloudflared --now
 ```
 
 CPU throttle:
