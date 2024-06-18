@@ -7,6 +7,14 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # go
 export GOPATH=/home/user/go
 
+# xdg
+export XDG_SESSION_TYPE=x11
+export XDG_CURRENT_DESKTOP=bspwm
+export GTK_USE_PORTAL=1
+
+# start notifications daemon
+dunst &
+
 # start x
 {
 sleep 1; \
