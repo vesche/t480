@@ -8,6 +8,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export GOPATH=/home/user/go
 
 # xdg
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_SESSION_TYPE=x11
 export XDG_CURRENT_DESKTOP=bspwm
 export GTK_USE_PORTAL=1
