@@ -131,7 +131,7 @@ pacman -S \
     `# audio     ` pulseaudio pulseaudio-alsa pavucontrol alsa-plugins alsa-utils \
     `# bluetooth ` bluez bluez-utils pulseaudio-bluetooth \
     `# code      ` vim git python python-pip go rust \
-    `# desktop   ` nitrogen i3lock \
+    `# desktop   ` nitrogen i3lock xdg-desktop-portal xdg-desktop-portal-gtk \
     `# fonts     ` adobe-source-code-pro-fonts noto-fonts \
     `# gui       ` firefox vlc obs-studio transmission-qt pcmanfm mupdf geeqie \
     `# misc      ` bind-tools feh tk pdftk boost qt5-xmlpatterns fortune-mod linux-headers \
