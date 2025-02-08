@@ -215,7 +215,16 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
 ```
 
+other:
+```
+# stop xdg-desktop-portal-gtk because we start this in the xinitrc
+systemctl --user mask xdg-desktop-portal-gtk
+# unnecessary shit
+sudo systemctl status systemd-userdbd
+```
+
 Update:
 ```
 sudo pacman -Syyu
+reboot
 ```
