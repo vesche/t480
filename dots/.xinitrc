@@ -33,6 +33,9 @@ dunst &
 # start xdg
 /usr/lib/xdg-desktop-portal-gtk &
 
+# start ootbat2
+~/.local/bin/ootbat2 &
+
 # wm
 sxhkd &
 exec bspwm

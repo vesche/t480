@@ -158,7 +158,7 @@ yay -S \
     `# bar      ` polybar \
     `# fonts    ` ttf-sourcecodepro-nerd ttf-font-awesome-4 \
     `# gui      ` aseprite discord google-chrome visual-studio-code-bin \  
-    `# misc     ` cava s-tui charles ida-free android-studio
+    `# misc     ` cava s-tui charles ida-free python-playsound
 ```
 
 Other tools:
@@ -167,7 +167,7 @@ Other tools:
 pip install --user \
     requests Flask websockets websocket-client beautifulsoup4 \
     twine click crayons bpython numpy Pillow sanic psutil histstat \
-    scanless youtube-dl
+    scanless youtube-dl ootbat2
 
 # edb
 sudo git clone --recursive https://github.com/eteran/edb-debugger.git /opt/edb-debugger
