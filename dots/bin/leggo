@@ -87,6 +87,7 @@ chmod 666 /sys/class/backlight/intel_backlight/brightness
 bscale 60000 2&> /dev/null
 
 if ask "Connect to the internet?" Y; then
+    echo "nameserver 127.0.0.1" > /etc/resolv.conf
     interface=$(get_interface)
     # set wifi off
     ip link set $interface down
