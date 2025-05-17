@@ -108,3 +108,17 @@ If you attempt to stream using VLC on Arch Linux and get a corrupted stream:
 
 You likely need the [aribb24](https://archlinux.org/packages/extra/x86_64/aribb24/) package: `sudo pacman -S aribb24`
 
+## United Wifi
+
+Documenting this at 35,000 feet because fuck United wifi.
+
+You need to resolve `unitedwifi.com` which doesn't play nice with 3rd party DNS servers and DNS over HTTPS. Queue the- "It's not DNS. There's no fucking way it's DNS. It was DNS." If `unitedwifi.com` is redirecting to `united.com` then you have a DNS issue.
+
+1. Turn off any VPN, proxy, cloudflared, DNS over HTTPS solution, tunneling software, EDR network agent, etc. If you're on some corp machine you might be SOL if you can't disable their security tooling.
+2. Ensure DNS server in `/etc/resolv.conf` is set to what the airplane router / DHCP is providing you. In my case the default gateway is `172.19.0.1` and the DNS server IP is `172.18.0.1`. If you're banging your head against the wall and can't get their stupid DNS server IP, sniff DHCP and then force a DHCP rebind (see below).
+  - `sudo tcpdump -i <interface> -vvv port 67 or port 68`
+  - `sudo dhcpcd --rebind`
+  - grep the tcpdump output for `Domain-Name-Server`
+  - `sudo echo nameserver <ip> > /etc/resolv.conf`
+3. In Firefox, make sure DNS over HTTPS is turned off. Settings -> Privacy & Security -> DNS over HTTPS -> Off
+4. Now go to `unitedwifi.com`, buy their shit product, and then turn all of your DNS security back on.
