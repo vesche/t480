@@ -122,3 +122,32 @@ You need to resolve `unitedwifi.com` which doesn't play nice with 3rd party DNS 
   - `sudo echo nameserver <ip> > /etc/resolv.conf`
 3. In Firefox, make sure DNS over HTTPS is turned off. Settings -> Privacy & Security -> DNS over HTTPS -> Off
 4. Now go to `unitedwifi.com`, buy their shit product, and then turn all of your DNS security back on.
+
+## Weird Hotel Wifi
+
+I'm unsure what router technology does this, but it's somehow possible to hide SSID's from select device signatures. If the SSID is hidden (or just not showing up) in `iwlist` / `wifi-menu` / etc, you can still connect of course- this is fairly straight forward. Get the SSID name from a different device or thru physical means and then connect manually.
+
+```
+sudo killall wpa_supplicant
+sudo wpa_supplicant -B -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
+sudo dhcpcd <interface>
+```
+
+`wpa_supplicant.conf`, for example, can look like this if there's no password. Once you connect, if there's a captive portal and your browser doesn't auto detect it, hit `detectportal.firefox.com` from Firefox.
+
+```
+network={
+	ssid="JWMarriott_Guest"
+	key_mgmt=NONE
+}
+```
+
+If there is a password, do it up like so:
+
+```
+network={
+	ssid="John's iPhone"
+	psk="passwordGoesHere"
+}
+```
+
