@@ -4,7 +4,7 @@ This and that...
 
 ## Bluetooth
 
-I'm using AirPod Pros with my T480, they work great.
+I use Shokz OpenRun Pro 2 Headphones with my T480, they are amazing.
 
 * pacman -S bluez bluez-utils pulseaudio-bluetooth
 * pulseaudio -k
@@ -17,7 +17,15 @@ I'm using AirPod Pros with my T480, they work great.
     * `pair <mac>`
     * `connect <mac>`
     * `exit`
-* Follow instructions [here](https://wiki.archlinux.org/index.php/Bluetooth_headset#Setting_up_auto_connection) to setup auto connect
+* Follow instructions [here](https://wiki.archlinux.org/index.php/Bluetooth_headset#Setting_up_auto_connection) to setup auto connect if you want.
+
+I'm not a huge fan of bluetooth auto connect because I'm paranoid, manual bash script:
+```
+#!/bin/bash
+
+bluetoothctl connect "<mac_addr>"
+polybar -r
+```
 
 ## LibreWolf / Firefox
 
