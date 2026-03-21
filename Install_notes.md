@@ -139,7 +139,7 @@ pacman -S \
     `# re        ` ghidra binwalk \
     `# terminal  ` alacritty fish tmux ranger w3m ueberzug \
     `# util      ` htop tree scrot acpi cloc whois speedtest-cli ntp strace streamlink croc man-db \
-    `# workflow  ` bspwm sxhkd dmenu dunst \
+    `# workflow  ` bspwm sxhkd dmenu dunst acpid \
     `# x         ` xorg-server xorg-xinit xorg-xrandr xf86-input-libinput xf86-video-intel
 ```
 
@@ -186,7 +186,7 @@ set -U fish_greeting ""
 fish_add_path ~/.local/bin/
 ```
 
-Cloudflared:
+cloudflared:
 ```
 # create systemd service file, see: https://wiki.archlinux.org/title/Cloudflared
 # ^ set port to 53
@@ -215,12 +215,38 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
 ```
 
-other:
+Other:
 ```
 # stop xdg-desktop-portal-gtk because we start this in the xinitrc
 systemctl --user mask xdg-desktop-portal-gtk
 # unnecessary shit
 sudo systemctl status systemd-userdbd
+```
+
+Suspend on lid close:
+```
+# set acpid to run on boot
+sudo systemctl enable --now acpid
+# lid events
+sudo cat /etc/acpi/events/lid
+event=button/lid.*
+action=/etc/acpi/lid.sh %e
+# suspend on lid close script
+sudo cat /etc/acpi/lid.sh
+#!/bin/bash
+case "$3" in
+    close)
+	# suspend the system when lid closed
+	systemctl suspend
+        ;;
+    open)
+	# No action needed; system will auto resume
+        ;;
+esac
+# set script to exectuable
+sudo chmod +x /etc/acpi/lid.sh
+# restart acpid
+sudo systemctl restart acpid
 ```
 
 Update:
