@@ -1,3 +1,5 @@
+I used my Lenovo ThinkPad T480 religiously from 2018 - 2026. A great run, but all good things must come to an end. I am now using a Framework Laptop, my new dotfiles are here: https://github.com/vesche/framedots
+
 # t480
 
 These are my personal notes & configs for running Arch Linux on a Lenovo ThinkPad T480.  
