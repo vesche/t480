@@ -53,3 +53,9 @@ else
   echo "Failed to connect to $DEVICE_NAME"
   exit 1
 fi
+
+# Restart polybar
+echo "Restarting polybar..."
+pkill polybar > /dev/null 2>&1
+/home/user/.config/polybar/launch > /dev/null 2>&1
+echo "All done!"
