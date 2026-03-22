@@ -1,61 +1,63 @@
 #!/usr/bin/env bash
 
-path_ac="/sys/class/power_supply/AC"
-path_battery_0="/sys/class/power_supply/BAT0"
-path_battery_1="/sys/class/power_supply/BAT1"
+# Try common AC adapter names (AC, ACAD, AC0)
+for path_ac in /sys/class/power_supply/AC /sys/class/power_supply/ACAD /sys/class/power_supply/AC0; do
+    if [ -f "$path_ac/online" ]; then
+        ac=$(cat "$path_ac/online")
+        break
+    fi
+done
 
-ac=0
-battery_level_0=0
+ac=${ac:-0}
 battery_level_1=0
-battery_max_0=0
 battery_max_1=0
 
-if [ -f "$path_ac/online" ]; then
-    ac=$(cat "$path_ac/online")
+# Try charge_now/charge_full first (mAh), then energy_now/energy_full (mWh)
+if [ -f "/sys/class/power_supply/BAT1/charge_now" ]; then
+    battery_level_1=$(cat "/sys/class/power_supply/BAT1/charge_now")
+    battery_max_1=$(cat "/sys/class/power_supply/BAT1/charge_full")
+elif [ -f "/sys/class/power_supply/BAT1/energy_now" ]; then
+    battery_level_1=$(cat "/sys/class/power_supply/BAT1/energy_now")
+    battery_max_1=$(cat "/sys/class/power_supply/BAT1/energy_full")
 fi
 
-if [ -f "$path_battery_0/energy_now" ]; then
-    battery_level_0=$(cat "$path_battery_0/energy_now")
+# Fallback: try BAT0 if BAT1 not found
+if [ "$battery_max_1" -eq 0 ] && [ -f "/sys/class/power_supply/BAT0/charge_now" ]; then
+    battery_level_1=$(cat "/sys/class/power_supply/BAT0/charge_now")
+    battery_max_1=$(cat "/sys/class/power_supply/BAT0/charge_full")
+elif [ "$battery_max_1" -eq 0 ] && [ -f "/sys/class/power_supply/BAT0/energy_now" ]; then
+    battery_level_1=$(cat "/sys/class/power_supply/BAT0/energy_now")
+    battery_max_1=$(cat "/sys/class/power_supply/BAT0/energy_full")
 fi
 
-if [ -f "$path_battery_0/energy_full" ]; then
-    battery_max_0=$(cat "$path_battery_0/energy_full")
+if [ "$battery_max_1" -eq 0 ]; then
+    battery_percent=0
+else
+    battery_percent=$(("$battery_level_1 * 100"))
+    battery_percent=$(("$battery_percent / $battery_max_1"))
 fi
 
-if [ -f "$path_battery_1/energy_now" ]; then
-    battery_level_1=$(cat "$path_battery_1/energy_now")
-fi
-
-if [ -f "$path_battery_1/energy_full" ]; then
-    battery_max_1=$(cat "$path_battery_1/energy_full")
-fi
-
-battery_level=$(("$battery_level_0 + $battery_level_1"))
-battery_max=$(("$battery_max_0 + $battery_max_1"))
-
-battery_percent=$(("$battery_level * 100"))
-battery_percent=$(("$battery_percent / $battery_max"))
-
+# Font Awesome battery icons (use font-1)
 if [ "$ac" -eq 1 ]; then
-    icon="#1"
+    icon=$(printf '\uf0e7')  # bolt (charging)
 
     if [ "$battery_percent" -gt 97 ]; then
-        echo "$icon"
+        echo "%{T1}$icon%{T-}"
     else
-        echo "$icon $battery_percent %"
+        printf "%%{T1}%s%%{T-} %02d%%\n" "$icon" "$battery_percent"
     fi
 else
     if [ "$battery_percent" -gt 85 ]; then
-        icon="#21"
+        icon=$(printf '\uf240')
     elif [ "$battery_percent" -gt 60 ]; then
-        icon="#22"
+        icon=$(printf '\uf241')
     elif [ "$battery_percent" -gt 35 ]; then
-        icon="#23"
+        icon=$(printf '\uf242')
     elif [ "$battery_percent" -gt 10 ]; then
-        icon="#24"
+        icon=$(printf '\uf243')
     else
-        icon="#25"
+        icon=$(printf '\uf244')
     fi
 
-    echo "$icon $battery_percent %"
+    printf "%%{T1}%s%%{T-} %02d%%\n" "$icon" "$battery_percent"
 fi
