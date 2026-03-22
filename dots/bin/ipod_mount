@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-sudo mount /dev/sdc2 /run/media/user/IPOD/ -o dmask=000,fmask=111

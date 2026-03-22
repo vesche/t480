@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Check if running as root
+if [ "$EUID" -ne 0 ]; then
+  echo "This script must be run as root."
+  exit 1
+fi
+
+# Check if Bluetooth service is active
+if systemctl is-active --quiet bluetooth; then
+  echo "Bluetooth service is already running."
+else
+  echo "Bluetooth service is not running. Starting it now..."
+  systemctl start bluetooth
+
+  # Verify it started successfully
+  if systemctl is-active --quiet bluetooth; then
+    echo "Bluetooth service started successfully."
+  else
+    echo "Failed to start Bluetooth service."
+    exit 1
+  fi
+fi
+
+DEVICE_NAME="OpenRun Pro 2 by Shokz"
+
+# Find matching device line
+DEVICE_LINE=$(bluetoothctl devices | grep -i "$DEVICE_NAME")
+
+# Check if device was found
+if [ -z "$DEVICE_LINE" ]; then
+  echo "No Bluetooth device found matching: $DEVICE_NAME"
+  exit 1
+fi
+
+# Extract MAC address (second field)
+DEVICE_MAC=$(echo "$DEVICE_LINE" | awk '{print $2}')
+
+# Validate MAC address format (XX:XX:XX:XX:XX:XX)
+if [[ ! "$DEVICE_MAC" =~ ^([A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2}$ ]]; then
+  echo "Invalid MAC address detected: $DEVICE_MAC"
+  exit 1
+fi
+
+echo "Found device: $DEVICE_NAME"
+echo "MAC address: $DEVICE_MAC"
+
+# Attempt to connect
+echo "Attempting to connect..."
+if bluetoothctl connect "$DEVICE_MAC" | grep -qi "successful"; then
+  echo "Successfully connected to $DEVICE_NAME"
+else
+  echo "Failed to connect to $DEVICE_NAME"
+  exit 1
+fi
